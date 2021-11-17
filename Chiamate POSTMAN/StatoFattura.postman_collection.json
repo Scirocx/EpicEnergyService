@@ -1,0 +1,90 @@
+{
+	"info": {
+		"_postman_id": "4720afc7-2e33-4522-8662-686135f59a24",
+		"name": "StatoFattura",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "saveStatoFattura",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\":\"DA_PAGARE\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/statofattura/addstatofattura",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"statofattura",
+						"addstatofattura"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateStatoFattura",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"1\",\r\n    \"nome\":\"PAGATO\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/statofattura/updatestatofattura",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"statofattura",
+						"updatestatofattura"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteStatoFattura",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/statofattura/deletestatofattura?id=1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"statofattura",
+						"deletestatofattura"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,272 @@
+{
+	"info": {
+		"_postman_id": "a55b9d8c-bf92-4672-b953-bce149139957",
+		"name": "Cliente",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "saveCliente",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ragioneSociale\":\"ragioneSociale2\",\r\n    \"partitaIva\":\"17447178941\",\r\n    \"tipoCliente:\":\"SRL\",\r\n    \"email\":\"email2@email.com\",\r\n    \"pec\":\"pec2@pec.com\",\r\n    \"telefono\":\"3801016484\",\r\n    \"nomeContatto\":\"nomecontatto2\",\r\n    \"cognomeContatto\":\"cognomecontatto2\",\r\n    \"telefonoContatto\":\"3811478223\",\r\n    \"emailContatto\":\"emailcontatto1@email.com\",\r\n    \"indirizzosedeoperativa\":{\r\n    \"id\":\"1\",    \r\n    \"via\":\"Necropoli\",\r\n    \"civico\":\"45\",\r\n    \"cap\":\"80023\",\r\n    \"localita\":\"Caivano\",\r\n    \"comune\":{\r\n        \"id\":\"1\",\r\n        \"nome\":\"Caivano\",\r\n        \"provincia\":{\r\n            \"id\":\"1\",\r\n            \"nome\":\"Napoli\",\r\n            \"sigla\":\"Na\"\r\n\r\n        }\r\n    }\r\n},\r\n\"indirizzosedelegale\":{\r\n    \"id\":\"1\",    \r\n    \"via\":\"Necropoli\",\r\n    \"civico\":\"45\",\r\n    \"cap\":\"80023\",\r\n    \"localita\":\"Caivano\",\r\n    \"comune\":{\r\n        \"id\":\"1\",\r\n        \"nome\":\"Caivano\",\r\n        \"provincia\":{\r\n            \"id\":\"1\",\r\n            \"nome\":\"Napoli\",\r\n            \"sigla\":\"Na\"\r\n\r\n        }\r\n    }\r\n},\r\n\"dataInserimento\":\"2021-12-12\",\r\n\"dataUltimoContatto\":\"2021-12-12\",\r\n\"fatturatoAnnuale\":\"10000\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/cliente/addcliente",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cliente",
+						"addcliente"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateCliente",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"1\",\r\n    \"ragioneSociale\":\"rag1\",\r\n    \"partitaIva\":\"12345678900\",\r\n    \"tipoCliente:\":\"SRL\",\r\n    \"email\":\"email2@email.com\",\r\n    \"pec\":\"pec1@pec.com\",\r\n    \"telefono\":\"123456\",\r\n    \"nomeContatto\":\"nomecontatto1\",\r\n    \"cognomeContatto\":\"cognomecontatto1\",\r\n    \"telefonoContatto\":\"1234567\",\r\n    \"emailContatto\":\"emailcontatto@email.com\",\r\n    \"indirizzosedeoperativa\":{\r\n    \"id\":\"1\",    \r\n    \"via\":\"Via dei Mille\",\r\n    \"civico\":\"123\",\r\n    \"cap\":\"00000\",\r\n    \"localita\":\"localita1\",\r\n    \"comune\":{\r\n        \"id\":\"1\",\r\n        \"nome\":\"comune1\",\r\n        \"provincia\":{\r\n            \"id\":\"1\",\r\n            \"nome\":\"Prova\",\r\n            \"sigla\":\"Pr\"\r\n\r\n        }\r\n    }\r\n},\r\n\"indirizzosedelegale\":{\r\n    \"id\":\"1\",    \r\n    \"via\":\"Via dei Mille\",\r\n    \"civico\":\"123\",\r\n    \"cap\":\"00000\",\r\n    \"localita\":\"localita1\",\r\n    \"comune\":{\r\n        \"id\":\"1\",\r\n        \"nome\":\"comune1\",\r\n        \"provincia\":{\r\n            \"id\":\"1\",\r\n            \"nome\":\"Prova\",\r\n            \"sigla\":\"Pr\"\r\n\r\n        }\r\n    }\r\n},\r\n\"dataInserimento\":\"2021-12-12\",\r\n\"dataUltimoContatto\":\"2021-12-12\",\r\n\"fatturatoAnnuale\":\"10000\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/cliente/updatecliente",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cliente",
+						"updatecliente"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteCliente",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/cliente/deletecliente?id=1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cliente",
+						"deletecliente"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "orderbyragionesociale",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/cliente/orderbyragionesociale",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cliente",
+						"orderbyragionesociale"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "orderbydatainserimento",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/cliente/orderbydatainserimento",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cliente",
+						"orderbydatainserimento"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "orderbyfatturatoannuale",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/cliente/orderbyfatturatoannuale",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cliente",
+						"orderbyfatturatoannuale"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "orderbyultimocontatto",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/cliente/orderbydatautlimocontatto",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cliente",
+						"orderbydatautlimocontatto"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "orderbyprovincia",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/cliente/orderbyprovincia",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cliente",
+						"orderbyprovincia"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findbyfatturatoannuale",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/cliente/fatturatoannuale?fatturato=1000",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cliente",
+						"fatturatoannuale"
+					],
+					"query": [
+						{
+							"key": "fatturato",
+							"value": "1000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findbydatainserimento",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/cliente/datainserimento?data=2021-12-12",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cliente",
+						"datainserimento"
+					],
+					"query": [
+						{
+							"key": "data",
+							"value": "2021-12-12"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findbypartenome",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/cliente/ragionesociale?nome=r",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cliente",
+						"ragionesociale"
+					],
+					"query": [
+						{
+							"key": "nome",
+							"value": "r"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

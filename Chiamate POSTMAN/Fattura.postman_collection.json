@@ -1,0 +1,225 @@
+{
+	"info": {
+		"_postman_id": "dd2b2176-8409-4a09-aaa7-93c7b4b5d726",
+		"name": "Fattura",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "saveFattura",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"data\":\"2021-12-12\",\r\n    \"numero\":\"00001\",\r\n    \"anno\":\"2021\",\r\n    \"importo\":\"1500\",\r\n    \"stato\":{\r\n        \"id\":\"1\",\r\n        \"nome\":\"DA_PAGARE\"\r\n        },\r\n    \"cliente\":{\r\n        \"id\":\"1\",\r\n    \"ragioneSociale\":\"ragioneSociale2\",\r\n    \"partitaIva\":\"17447178941\",\r\n    \"tipoCliente\":\"SRL\",\r\n    \"email\":\"email2@email.com\",\r\n    \"pec\":\"pec2@pec.com\",\r\n    \"telefono\":\"3801016484\",\r\n    \"nomeContatto\":\"nomecontatto2\",\r\n    \"cognomeContatto\":\"cognomecontatto2\",\r\n    \"telefonoContatto\":\"3811478223\",\r\n    \"emailContatto\":\"emailcontatto1@email.com\",\r\n    \"indirizzoSedeOperativa\":{\r\n    \"id\":\"1\",    \r\n    \"via\":\"Necropoli\",\r\n    \"civico\":\"45\",\r\n    \"cap\":\"80023\",\r\n    \"localita\":\"Caivano\",\r\n    \"comune\":{\r\n        \"id\":\"1\",\r\n        \"nome\":\"Caivano\",\r\n        \"provincia\":{\r\n            \"id\":\"1\",\r\n            \"nome\":\"Napoli\",\r\n            \"sigla\":\"Na\"\r\n\r\n        }\r\n    }\r\n},\r\n\"indirizzoSedeLegale\":{\r\n    \"id\":\"1\",    \r\n    \"via\":\"Necropoli\",\r\n    \"civico\":\"45\",\r\n    \"cap\":\"80023\",\r\n    \"localita\":\"Caivano\",\r\n    \"comune\":{\r\n        \"id\":\"1\",\r\n        \"nome\":\"Caivano\",\r\n        \"provincia\":{\r\n            \"id\":\"1\",\r\n            \"nome\":\"Napoli\",\r\n            \"sigla\":\"Na\"\r\n\r\n        }\r\n    }\r\n},\r\n\"dataInserimento\":\"2021-12-12\",\r\n\"dataUltimoContatto\":\"2021-12-12\",\r\n\"fatturatoAnnuale\":\"10000\"\r\n}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/fattura/addfattura",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"fattura",
+						"addfattura"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateFattura",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"2\",\r\n    \"data\":\"2021-12-12\",\r\n    \"numero\":\"00001\",\r\n    \"anno\":\"2021-01-01\",\r\n    \"importo\":\"1700\",\r\n    \"stato\":{\r\n        \"id\":\"2\",\r\n        \"nome\":\"DA_PAGARE\"\r\n        },\r\n    \"cliente\":{\r\n        \"id\":\"1\",\r\n    \"ragioneSociale\":\"rag1\",\r\n    \"partitaIva\":\"12345678900\",\r\n    \"tipoCliente:\":\"SRL\",\r\n    \"email\":\"email2@email.com\",\r\n    \"pec\":\"pec1@pec.com\",\r\n    \"telefono\":\"123456\",\r\n    \"nomeContatto\":\"nomecontatto1\",\r\n    \"cognomeContatto\":\"cognomecontatto1\",\r\n    \"telefonoContatto\":\"1234567\",\r\n    \"emailContatto\":\"emailcontatto@email.com\",\r\n    \"indirizzosedeoperativa\":{\r\n    \"id\":\"1\",    \r\n    \"via\":\"Via dei Mille\",\r\n    \"civico\":\"123\",\r\n    \"cap\":\"00000\",\r\n    \"localita\":\"localita1\",\r\n    \"comune\":{\r\n        \"id\":\"1\",\r\n        \"nome\":\"comune1\",\r\n        \"provincia\":{\r\n            \"id\":\"1\",\r\n            \"nome\":\"Prova\",\r\n            \"sigla\":\"Pr\"\r\n\r\n        }\r\n    }\r\n},\r\n\"indirizzosedelegale\":{\r\n    \"id\":\"1\",    \r\n    \"via\":\"Via dei Mille\",\r\n    \"civico\":\"123\",\r\n    \"cap\":\"00000\",\r\n    \"localita\":\"localita1\",\r\n    \"comune\":{\r\n        \"id\":\"1\",\r\n        \"nome\":\"comune1\",\r\n        \"provincia\":{\r\n            \"id\":\"1\",\r\n            \"nome\":\"Prova\",\r\n            \"sigla\":\"Pr\"\r\n\r\n        }\r\n    }\r\n},\r\n\"dataInserimento\":\"2021-12-12\",\r\n\"dataUltimoContatto\":\"2021-12-12\",\r\n\"fatturatoAnnuale\":\"10000\"\r\n}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/fattura/updatefattura",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"fattura",
+						"updatefattura"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteFattura",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/fattura/deletefattura?id=2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"fattura",
+						"deletefattura"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findbycliente",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"1\",\r\n    \"ragioneSociale\":\"ragioneSociale2\",\r\n    \"partitaIva\":\"17447178941\",\r\n    \"tipoCliente\":\"SRL\",\r\n    \"email\":\"email2@email.com\",\r\n    \"pec\":\"pec2@pec.com\",\r\n    \"telefono\":\"3801016484\",\r\n    \"nomeContatto\":\"nomecontatto2\",\r\n    \"cognomeContatto\":\"cognomecontatto2\",\r\n    \"telefonoContatto\":\"3811478223\",\r\n    \"emailContatto\":\"emailcontatto1@email.com\",\r\n    \"indirizzoSedeOperativa\":{\r\n    \"id\":\"1\",    \r\n    \"via\":\"Necropoli\",\r\n    \"civico\":\"45\",\r\n    \"cap\":\"80023\",\r\n    \"localita\":\"Caivano\",\r\n    \"comune\":{\r\n        \"id\":\"1\",\r\n        \"nome\":\"Caivano\",\r\n        \"provincia\":{\r\n            \"id\":\"1\",\r\n            \"nome\":\"Napoli\",\r\n            \"sigla\":\"Na\"\r\n\r\n        }\r\n    }\r\n},\r\n\"indirizzoSedeLegale\":{\r\n    \"id\":\"1\",    \r\n    \"via\":\"Necropoli\",\r\n    \"civico\":\"45\",\r\n    \"cap\":\"80023\",\r\n    \"localita\":\"Caivano\",\r\n    \"comune\":{\r\n        \"id\":\"1\",\r\n        \"nome\":\"Caivano\",\r\n        \"provincia\":{\r\n            \"id\":\"1\",\r\n            \"nome\":\"Napoli\",\r\n            \"sigla\":\"Na\"\r\n\r\n        }\r\n    }\r\n},\r\n\"dataInserimento\":\"2021-12-12\",\r\n\"dataUltimoContatto\":\"2021-12-12\",\r\n\"fatturatoAnnuale\":\"10000\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/fattura/findbycliente",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"fattura",
+						"findbycliente"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findbystato",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"1\",\r\n    \"nome\":\"DA_PAGARE\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/fattura/findbystato",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"fattura",
+						"findbystato"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findbydata",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/fattura/findbydata?data=2021-12-12",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"fattura",
+						"findbydata"
+					],
+					"query": [
+						{
+							"key": "data",
+							"value": "2021-12-12"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findbyanno",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/fattura/findbyanno?anno=2021",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"fattura",
+						"findbyanno"
+					],
+					"query": [
+						{
+							"key": "anno",
+							"value": "2021"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findbyrange",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/fattura/findbyrange?minP=500&maxP=1500",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"fattura",
+						"findbyrange"
+					],
+					"query": [
+						{
+							"key": "minP",
+							"value": "500"
+						},
+						{
+							"key": "maxP",
+							"value": "1500"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

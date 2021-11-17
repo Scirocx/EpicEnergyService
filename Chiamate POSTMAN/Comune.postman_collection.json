@@ -1,0 +1,90 @@
+{
+	"info": {
+		"_postman_id": "5d23a8af-59ae-488b-916e-0906bd787154",
+		"name": "Comune",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "saveComune",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\":\"Caivano\",\r\n    \"provincia\": {\r\n        \"id\" : \"2\",\r\n        \"nome\" : \"Napoli\",\r\n        \"sigla\" : \"NA\"\r\n\r\n\r\n\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/comune/addcomune",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"comune",
+						"addcomune"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateComune",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"2\",\r\n    \"nome\":\"Cardito\",\r\n    \"provincia\": {\r\n        \"id\" : \"2\",\r\n        \"nome\" : \"Napoli\",\r\n        \"sigla\" : \"NA\"\r\n\r\n\r\n\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/comune/updatecomune",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"comune",
+						"updatecomune"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteComune",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/comune/deletecomune?id=2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"comune",
+						"deletecomune"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

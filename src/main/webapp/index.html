@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="it" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+    	body {
+    background-image: url(https://wallpaperaccess.com/full/1599948.jpg);
+    background-size: cover;
+}
+
+.btn-basic {
+    color: black;
+    background-color: grey;
+    outline: none;
+    border: none;
+    height: 100px;
+    width: 450px;
+    font-size: xx-large;
+    font-family: Menlo, monospace, serif;
+}
+
+.btn-basic:focus {
+    outline: none;
+    color: black;
+}
+
+.btn-basic:hover {
+    background-color: rgba(131,144,108,255);
+    color: black;
+}
+
+.btn-basic:active {
+    opacity: 80%;
+    outline: none !important;
+    border: none !important;
+}
+
+.container { 
+    height: 300px;
+    position: relative;
+}
+  
+.center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.modal-header {
+    background-color: rgba(131,144,108,255);
+}
+
+input[type=text] {
+    border-radius: 5px;
+    outline: none;
+    display: inline-block;
+}
+
+input[type=password] {
+    border-radius: 5px;
+    outline: none;
+    display: inline-block;
+}
+
+input[type=text]:focus {
+    border: 2px solid grey;
+}
+
+input[type=button] {
+    color: black;
+    border: 3px solid white;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 0 3px;
+    display: inline-block;
+    border-radius:10px;
+}
+
+input[type=button]:active {
+    transform: translateY(1px);
+}
+
+.title {
+    text-align: center;
+    color: black;
+    position: relative;
+    font-size: 70px;
+}
+
+.subtitle {
+      text-align: center;
+      color: seagreen;
+      position: relative;
+}
+
+.copyright {
+      position: relative;
+      text-align: center;
+      color: black;
+      font-size: small;
+      font-family: Arial, Helvetica, sans-serif;
+}
+    	
+    
+    </style>
+</head>
+
+<body>
+
+    <h1 class="title">EPIC ENERGY SERVICE</h1>
+
+    <div class="container">
+        <div class="center">
+            <button type="button" class="btn btn-basic btn-lg" data-toggle="modal"
+                data-target="#loginModal">Login</button><br><br>
+            <button type="button" class="btn btn-basic btn-lg" data-toggle="modal" data-target="#signUpModal">Sign
+                Up</button>
+        </div>
+    </div>
+
+    <!--- Login Modal --->
+    <div class="modal fade" id="loginModal" role="dialog">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+				<form action="/apihtml/login2" th:object="${loginRequest}" method="post">
+			
+                        <label for="username">Username</label><br>
+                        <input type="text" id="username" name="username" th:field="*{username}"><br><br>
+                        <label for="password">Password</label><br>
+                        <input type="password" id="password" name="password" th:field="*{password}"><br><br>
+                        <input type="submit" value="Submit">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--- SignUp Modal --->
+    
+    <div class="modal fade" id="signUpModal" role="dialog">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                
+                <div class="modal-body">
+                        <form action="/apihtml/signup2" th:object="${signUpRequest}" method="post">
+                        <label for="field1">Username</label><br>
+                        <input type="text" id="username" name="username" th:field="*{username}"><br><br>
+                        <label for="field2">Password</label><br>
+                        <input type="password" id="password" name="password" th:field="*{password}"> <br><br>
+                        <label for="field3">Email</label><br>
+                        <input type="text" id="field3" name="email" th:field="*{email}"><br><br>
+                        <label for="field4">Nome</label><br>
+                        <input type="text" id="field4" name="nome" th:field="*{nome}"><br><br>
+                        <label for="field4">Cognome</label><br>
+                        <input type="text" id="field4" name="cognome" th:field="*{cognome}"><br><br>
+                        <input type="submit" value="Submit">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="copyright">@Riccardo Falzea</h2>
+
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+{
+	"info": {
+		"_postman_id": "8a0290b7-c50d-4994-b023-f2636f0ddbb0",
+		"name": "Provincia",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "saveProvincia",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"nome\":\"Napoli\",\r\n   \"sigla\": \"NA\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/provincia/addprovincia",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"provincia",
+						"addprovincia"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateProvincia",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"1\",\r\n    \"nome\":\"Milano\",\r\n    \"sigla\":\"Mi\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/provincia/updateprovincia",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"provincia",
+						"updateprovincia"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteProvincia",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/provincia/deleteprovincia?id=1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"provincia",
+						"deleteprovincia"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

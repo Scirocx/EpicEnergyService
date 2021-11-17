@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="it" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Stampa lista</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+<body>
+	<div class="container">
+		<h1 class="h3">Elenco Clienti</h1>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Ragione Sociale</th>
+					<th>Partita Iva</th>
+					<th>Tipo Cliente</th>
+					<th>Email</th>
+					<th>Pec</th>
+					<th>Telefono</th>
+					<th>Nome Contatto</th>
+					<th>Cognome Contatto</th>
+					<th>Telefono Contatto</th>
+					<th>Email del contatto</th>
+					<th>Data inserimento del contatto</th>
+					<th>Data ultimo contatto</th>
+					<th>Fatturato annuale</th>
+					
+				</tr>
+				<!--<li th:each="item: ${myclass.myArray}">-->
+				<tbody>
+				<tr th:each="cliente: ${find}">
+					<td th:text="${cliente.ragioneSociale}">
+					<td th:text="${cliente.partitaIva}">
+					<td th:text="${cliente.tipoCliente}">
+					<td th:text="${cliente.email}">
+					<td th:text="${cliente.pec}">
+					<td th:text="${cliente.telefono}">
+					<td th:text="${cliente.nomeContatto}">
+					<td th:text="${cliente.cognomeContatto}">
+					<td th:text="${cliente.telefonoContatto}">
+					<td th:text="${cliente.emailContatto}">
+					<td th:text="${cliente.dataInserimento}">
+					<td th:text="${cliente.dataUltimoContatto}">
+					<td th:text="${cliente.fatturatoAnnuale}">
+					
+					<td><a class="btn btn-primary" th:href="@{/apihtml/showindirizzo/{indirizzo}(indirizzo=${cliente.indirizzoSedeLegale.id})}">Visualizza indirizzo sede legale</a></td>
+					<td><a class="btn btn-primary" th:href="@{/apihtml/showindirizzo/{indirizzo}(indirizzo=${cliente.indirizzoSedeOperativa.id})}">Visualizza indirizzo sede operativa</a></td>
+					<td><a class="btn btn-warning" th:href="@{/apihtml/updatecliente/{id}(id=${cliente.id})}">Modifica</a><a
+						class="mx-3 btn btn-danger" th:href="@{/apihtml/deletecliente/{id}(id=${cliente.id})}">Elimina</a></td>
+				</tr>
+				</tbody>
+				</table>
+				<a class="btn btn-primary" href="javascript:history.back();">Indietro</a>
+	</div>
+</body>
+</html>
