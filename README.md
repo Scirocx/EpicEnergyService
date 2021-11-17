@@ -23,6 +23,7 @@ Realizzare un portalino con delle pagine che permettano l'accesso alle funzioni 
 Per confezionare e adeguare rapidamente l'estetica del portale, sfruttare una libreria come Bootstrap, da inserire nei contenuti static della nostra app 
 SpringBoot.
 
+________________________________________________________________________________________________________________________________________________________________________________
 
  
  -----------------------ISTRUZIONI PER IL CORRETTO FUNZIONAMENTO--------------------------
@@ -38,7 +39,11 @@ Inoltre occore indicare anche il giusto path per quanto riguarda i file csv -che
   
   Per il primo funzionamento, prima di startare l'applicazione, al fine di creare il database è necessario scommentare l'annotazione @Component situata all'interno della stessa classe Commons a riga 17 mentre se si vuole ristartare l'applicazione senza dover ricreare il database, occore ricommentare suddetta annotazione.
   
-  --------------CORRETTO POPOLAMENTO DATABASE CON CHIAMATE POSTMAN----------------
+  _______________________________________________________________________________________________________________________________________________________________________________
+
+
+--------------CORRETTO POPOLAMENTO DATABASE CON CHIAMATE POSTMAN----------------
+
   
   
 	
