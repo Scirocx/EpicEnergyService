@@ -10,8 +10,11 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import it.epicode.beservice.model.Comune;
+import it.epicode.beservice.model.Erole;
 import it.epicode.beservice.model.Provincia;
 import it.epicode.beservice.service.ComuneService;
+import it.epicode.beservice.model.Role;
+import it.epicode.beservice.repository.RoleRepository;
 import it.epicode.beservice.service.ProvinciaService;
 
 //@Component
@@ -23,12 +26,21 @@ public class Commons implements CommandLineRunner {
 	@Autowired
 	ProvinciaService provinciaService;
 	
+	@Autowired
+	RoleRepository roleRepo;
+	
 	private static final String PATH_PROVINCIA="C:\\Users\\ricca\\Downloads\\province-italiane (1).csv";
 	private static final String PATH_COMUNE="C:\\Users\\ricca\\Downloads\\comuni-italiani (1).csv";
 	
 	@Override
 	public void run(String... args) throws Exception {
 		
+		Role role=new Role();
+			role.setEroles(Erole.ROLE_ADMIN);
+			this.roleRepo.save(role);
+			Role roleUser=new Role();
+			roleUser.setEroles(Erole.ROLE_USER);
+			this.roleRepo.save(roleUser);
 		recuperoDaCsvProvincia();
 		recuperoDaCsvComune();
 		
