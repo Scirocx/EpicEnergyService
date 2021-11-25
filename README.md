@@ -30,19 +30,28 @@ ________________________________________________________________________________
  
  
 L'applicazione per poter funzionare necessita di un collegamento in locale al proprio database nelle applications property, all'interno della cartella resources.
-Inoltre occore indicare anche il giusto path per quanto riguarda i file csv -che troverete nella cartella csv del project explorer da poter prendere e caricarli in locale- e quindi modificare in maniera molto semplice il codice nel package "it.epicode.beservice.commons". All'interno dell'unica classe "Commons" infatti troverete le seguenti diciture a righe 26-27:
-
-  private static final String PATH_PROVINCIA="C:\\Users\\ricca\\Downloads\\province-italiane (1).csv";
-	private static final String PATH_COMUNE="C:\\Users\\ricca\\Downloads\\comuni-italiani (1).csv";
-  
-  Basterà cambiare la parte virgolettata con il percorso in cui avrete i 2 file dopo averli spostati/copiati in locale.
-  
-  Per il primo funzionamento, prima di startare l'applicazione, al fine di creare il database è necessario scommentare l'annotazione @Component situata all'interno della stessa classe Commons a riga 17 mentre se si vuole ristartare l'applicazione senza dover ricreare il database, occore ricommentare suddetta annotazione.
+Dopodichè l'applicazione è pronta per essere startata e creare il database che risulterà vuoto.
+Fondamentale ricordarsi, che una volta popolato il database, se si vuole ristartare l'applicazione e non perdere i dati inseriti in quest'ultimo, è necessario ritornare nelle applications property e cambiare la dicitura da "create" ad "update" e di conseguenza commentare la dicitura a riga 20 @Component nel package it.epicode.beservice.common all'interno della classe Commons
   
   _______________________________________________________________________________________________________________________________________________________________________________
 
 
 --------------CORRETTO POPOLAMENTO DATABASE CON CHIAMATE POSTMAN----------------
+
+Ai fini del popolamento del database, all'interno del progetto, è inserita una cartella "Chiamate POSTMAN", in cui sono presenti le collezioni sia per il suddetto popolamento che per tutte le ricerche. Per poter popolare correttamente il database, occorre eseguire in maniera corretta le seguenti chiamate:
+1. Save indirizzo
+2. Save Cliente
+3. Save Stato Fattura
+4. Save Fattura
+
+Inoltre, se si vogliono aggiungere al database più Clienti o Fatture, è necessario cambiare alcuni campi che ho reso unici, ovvero in Cliente:
+1. ragione sociale 
+2. partita iva
+3. email
+4. pec 
+
+mentre in Fattura:
+1. numero
 
   
   
